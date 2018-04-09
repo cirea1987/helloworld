@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; frame-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval';"> -->
+    <title>园区</title>
+    <!-- Path to your custom app styles-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=59047f4535fe1e2f8fb8e7431abdc977"></script>
+    <style>
+      #container{height:500px;width:100%;}
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button onclick="luzhi()">录制</button>
+    <button style="font-size:23px;" onclick="audioCapture();">开始录音</button>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+//     function audioCapture() {
+//                //开始录音（最长录制时间：15秒）
+//                navigator.device.capture.captureAudio(onSuccess, onError, {duration: 15});
+//  
+//                //录制成功
+//                function onSuccess(mediaFiles) {
+//                   var i, path, len;
+//                   //遍历获取录制的文件（iOS只支持一次录制一个视频或音频）
+//                   for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+//                     console.log(mediaFiles);
+//                      path = mediaFiles[i].fullPath;
+//                      alert("录制成功！\n\n"
+//                           + "文件名：" + mediaFiles[i].name + "\n"
+//                           + "大小：" + mediaFiles[i].size + "\n\n"
+//                           + "localURL地址：" + mediaFiles[i].localURL + "\n\n"
+//                           + "fullPath地址：" + path);
+//                   }
+//                }
+//  
+//                //录制失败
+//                function onError(error) {
+//                   alert('录制失败！错误码：' + error.code);
+//                }
+//           }
+//     function luzhi(){
+//       var src = "myrecording.mp3";
+//       var mediaRec = new Media(src,
+//           // success callback
+//           function() {
+//               console.log("recordAudio():Audio Success");
+//           },
+
+//           // error callback
+//           function(err) {
+//               console.log("recordAudio():Audio Error: "+ err.code);
+//           });
+
+//       // Record audio
+//       mediaRec.startRecord();
+//     }
+    var map = new AMap.Map('container',{
+      resizeEnable: true,
+      zoom: 10,
+      center: [116.480983, 40.0958]
+    });
+    </script>
+  </body>
+</html>
